@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   
   get '/teams', to: 'teams#index'
+
+  get '/members', to: 'members#index'
 end
