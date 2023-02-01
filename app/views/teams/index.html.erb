@@ -3,7 +3,5 @@
 
 
 <% @teams.each do |team| %>
-  <h3><%= link_to team.name, "/teams/#{team.id}" %></h3>
-  <p>Wins: <%= team.games_won %></p>
-  <p>Championship&nbsp;Victory: <%= team.won_championship %>
+  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Members", "/teams/#{team.id}" %></h3>
 <% end %>

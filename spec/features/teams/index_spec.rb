@@ -11,8 +11,7 @@ describe 'team index page' do
   describe 'when I visit team index page' do
     it 'shows the attributes of each team' do
       expect(page).to have_content(team_1.name)
-      expect(page).to have_content(team_1.games_won)
-      expect(page).to have_content(team_1.won_championship)
+
       expect(page).to have_content(team_2.name)
     end
   end
