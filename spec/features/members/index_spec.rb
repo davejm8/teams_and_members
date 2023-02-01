@@ -10,9 +10,14 @@ describe 'team index page' do
   end
 
   describe 'when I visit member index page' do
-    it 'shows the name of each member' do
+    it 'shows the attributes of each member' do
       expect(page).to have_content(mario.name)
+      expect(page).to have_content(mario.wage)
+      expect(page).to have_content(mario.injured)
+
       expect(page).to have_content(luigi.name)
+      expect(page).to have_content(luigi.wage)
+      expect(page).to have_content(luigi.injured)
     end
   end
 end
