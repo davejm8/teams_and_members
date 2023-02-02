@@ -5,4 +5,4 @@
 
 <p>Championship&nbsp;Winner: <%= @team.won_championship %></p>
 
-<%= link_to "Team Members", "/teams/#{@team.id}/members" %>
+<p><%= link_to "Team Members", "/teams/#{@team.id}/members"%>: <%=@team.member_count %></p>
