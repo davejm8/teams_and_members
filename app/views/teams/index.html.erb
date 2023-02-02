@@ -1,0 +1,9 @@
+<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Players Index", "/members" %></p>
+
+<h1>All Teams</h1>
+
+
+<% @teams.each do |team| %>
+  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Members", "/teams/#{team.id}/members" %></h3>
+  <p><%=team.created_at%></p>
+<% end %>

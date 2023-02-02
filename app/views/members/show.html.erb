@@ -1,0 +1,9 @@
+<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Players Index", "/members" %></p>
+
+<h1><%= @members.name %></h1>
+
+<p>Hourly&nbsp;Wage:<%= @members.wage %></p>
+
+<p>Currently&nbsp;Injured: <%= @members.injured %></p>
+
+<h3>Team: <%= link_to @members.team.name, "/teams/#{@members.team.id}" %></h3>
