@@ -7,11 +7,8 @@ RSpec.describe 'Teams members index' do
 
   it 'shows all the player names on a team' do
     visit "/teams/#{smash.id}/members"
+
     expect(page).to have_content(mario.name)
     expect(page).to have_content(luigi.name)
-  end
-
-  it 'links to each member page' do
-
   end
 end
