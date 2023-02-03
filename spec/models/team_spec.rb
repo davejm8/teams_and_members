@@ -14,10 +14,8 @@ describe Team do
 
     describe '#member_count' do
       it 'counts the number of members on a team' do
-        expect(@smash.member_count).to eq(2) 
+        expect(@smash.member_count).to eq(2)
       end
     end
-    
   end
-
 end
