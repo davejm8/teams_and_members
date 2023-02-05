@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-describe '#create' do
+RSpec.describe '#create' do
   it 'can create a new team' do
     visit '/teams/new'
 

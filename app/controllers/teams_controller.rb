@@ -34,6 +34,7 @@ class TeamsController < ApplicationController
     redirect_to "/teams/#{team.id}"
   end
 
+  private
   def team_params
     params.permit(:name, :games_won, :won_championship)
   end
