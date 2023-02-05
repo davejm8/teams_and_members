@@ -20,4 +20,16 @@ describe 'team index page' do
       expect(page).to have_content(luigi.injured)
     end
   end
+
+  it 'has a link to only display players who are eligible for trade' do
+    visit "/members"
+    expect(page).to have_link "Injured Members"
+    click_link "Injured Members"
+  
+    expect(page).to have_content("Injured Members:")
+    expect(page).to have_content(mario.name)
+    expect(page).to have_content("Team ID: #{smash.id}")
+    expect(page).to have_content("Wage: $#{mario.wage}")
+    expect(page).to have_content("Injured? #{mario.injured}")
+  end
 end
