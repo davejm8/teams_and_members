@@ -5,3 +5,5 @@
   <p>Wage: <%= member.wage %></p>
   <p>Injured? <%= member.injured %></p>
 <% end %>
+
+<p><%= link_to "Add New Member", "/teams/#{@team.id}/members/new"%></p>

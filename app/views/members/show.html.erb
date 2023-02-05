@@ -7,3 +7,4 @@
 <p>Currently&nbsp;Injured: <%= @members.injured %></p>
 
 <h3>Team: <%= link_to @members.team.name, "/teams/#{@members.team.id}" %></h3>
+<p><%= button_to "Update Member", "/members/#{@members.id}/edit"%>

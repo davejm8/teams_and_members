@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/members/:id', to: 'members#show'
   get '/teams/:team_id/members/new', to: 'team_members#new'
   post '/teams/:team_id/members', to: 'team_members#create_member'
+  post '/members/:id/edit', to: 'members#edit'
+  post '/members/:id', to: 'members#update'
 end

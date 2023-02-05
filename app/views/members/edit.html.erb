@@ -1,0 +1,10 @@
+<%= form_with url: "/members/#{@member.id}", method: :post, local:true do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+  <%= form.label :wage, "Wage" %>
+  <%= form.text_field :injured %>
+  <%= form.label :injured, "Injured?"%>
+  <%= form.check_box :injured %>
+
+  <%= form.submit "Update Member" %>
+<% end%>
