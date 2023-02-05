@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   get '/teams/:id', to: 'teams#show'
   get '/teams/:team_id/members', to: 'team_members#index'
   post '/teams/:id/edit', to: 'teams#edit'
-  post 'teams/:id', to: 'teams#update'
+  patch 'teams/:id', to: 'teams#update'
 
   get '/members', to: 'members#index'
   get '/members/:id', to: 'members#show'
   get '/teams/:team_id/members/new', to: 'team_members#new'
   post '/teams/:team_id/members', to: 'team_members#create_member'
   post '/members/:id/edit', to: 'members#edit'
-  post '/members/:id', to: 'members#update'
+  patch '/members/:id', to: 'members#update'
 end
