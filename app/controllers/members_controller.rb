@@ -1,7 +1,13 @@
 class MembersController < ApplicationController
 
   def index
-    @members = Member.all
+    if injured_param[:injured] == "true"
+      @members = Member.injured_sort
+      @header = "Injured:"
+    else
+      @members = Member.all
+      @header = "Members"
+    end
   end
 
   def show
@@ -22,5 +28,9 @@ class MembersController < ApplicationController
   private
   def update_params
     params.permit(:name, :wage, :injured, :team_id)
+  end
+
+  def injured_param
+    params.permit(:injured)
   end
 end
