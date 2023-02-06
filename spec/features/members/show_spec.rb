@@ -8,6 +8,7 @@ describe 'member specifc page' do
   describe 'when I visit a specific member page' do
     it 'shows the attributes of the member' do
       visit "/members/#{mario.id}"
+
       expect(page).to have_content(mario.wage)
       expect(page).to have_content(mario.injured)
       expect(page).to have_content(mario.team.name)
