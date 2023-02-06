@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Team do
+RSpec.describe Team do
   describe 'relations' do
     it { should have_many :members }
   end
@@ -15,6 +15,12 @@ describe Team do
     describe '#member_count' do
       it 'counts the number of members on a team' do
         expect(@smash.member_count).to eq(2)
+      end
+    end
+    
+    describe '#sort_name' do
+      it 'has a class method to sort by name' do
+        expect(@smash.sort_name).to eq([@luigi, @mario])
       end
     end
   end

@@ -1,4 +1,5 @@
 <p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Members Index", "/members" %></p>
+<p><%= link_to "Sort Members By Name", "/teams/#{@team.id}/members?sort=asc" %></p>
 
 <% @members.each do |member| %>
   <h3><%= link_to member.name, "/members/#{member.id}" %></h3>

@@ -11,4 +11,12 @@ RSpec.describe 'Teams members index' do
     expect(page).to have_content(mario.name)
     expect(page).to have_content(luigi.name)
   end
+
+  it 'has link on the teams members index page to sort the members alphabetically by name' do
+    visit "/teams/#{smash.id}/members"
+    
+    expect(page).to have_link "Sort Members By Name"
+    click_link "Sort Members By Name"
+    expect(luigi.name).to appear_before(mario.name)
+  end
 end

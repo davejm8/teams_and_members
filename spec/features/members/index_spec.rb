@@ -30,7 +30,6 @@ describe 'team index page' do
 
     it 'has a link to the team index' do
       visit "/members"
-      save_and_open_page
       expect(page).to have_link 'Teams Index', href: "/teams"
   
       visit "/members/#{mario.id}"
