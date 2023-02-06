@@ -48,7 +48,5 @@ RSpec.describe 'team index page' do
       expect(page).to have_content("Name")
       expect(current_path).to eq("/teams/#{team_1.id}/edit")
     end
-
-    # it 'has a link to delete '
   end
 end

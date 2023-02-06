@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'team specifc page' do
+RSpec.describe 'team specifc page' do
   let!(:team_1) {Team.create!(name: "Bruins", games_won: 10, won_championship: true)}
   let!(:mario) {team_1.members.create!(name: "Mario", wage: 95.05, injured: false, team_id: team_1.id)}
   let!(:luigi) {team_1.members.create!(name: "Luigi", wage: 90.00, injured: true, team_id: team_1.id)}
@@ -44,7 +44,17 @@ describe 'team specifc page' do
       visit "/teams/#{team_1.id}"
       expect(page).to have_link 'Team Members', href: "/teams/#{team_1.id}/members"
     end
-  end
-
   
+    it 'has a link to delete the specific team with all members' do
+      expect(page).to have_link "Delete #{team_1.name}", href "/teams/#{team_1.id}"
+      click_link "Delete #{team_1.name}"
+
+      expect(page).to_not have_content("#{team_1.name}")
+      expect(current_path).to eq("/teams")
+
+      visit '/members'
+      expect(page).to_not have_content("#{mario.name}")
+      expect(page).to_not have_content("#{luigi.name}")
+    end
+  end
 end
