@@ -21,7 +21,6 @@ describe 'team index page' do
     end
     
     it 'has a link to the members index' do
-      visit "/members"
       expect(page).to have_link 'Members Index', href: "/members"
   
       visit "/members/#{mario.id}"
@@ -29,23 +28,27 @@ describe 'team index page' do
     end
 
     it 'has a link to the team index' do
-      visit "/members"
       expect(page).to have_link 'Teams Index', href: "/teams"
   
       visit "/members/#{mario.id}"
       expect(page).to have_link 'Teams Index', href: "/teams"
     end
-  end
-
-  describe 'when i click on a link injured members i see only the injured members' do
+  
     it 'has a link to only display members who are injured' do
-      visit "/members"
       expect(page).to have_link "Injured Members"
       click_link "Injured Members"
     
       expect(page).to have_content(luigi.name)
       expect(page).to have_content(luigi.wage)
       expect(page).to have_content(luigi.injured)
+    end
+    
+    it 'has a link to member update page' do
+      expect(page).to have_link "Update #{mario.name}", href: "/members/#{mario.id}/edit"
+      click_link "Update #{mario.name}"
+
+      expect(page).to have_content("Name")
+      expect(current_path).to eq("/members/#{mario.id}/edit")
     end
   end
 end

@@ -42,7 +42,13 @@ RSpec.describe 'team index page' do
     end
 
     it 'has a link to team update page for specific team' do
-      expect(page).to have_link "Update Team", href: "/teams/#{team_1.id}/edit"
+      expect(page).to have_link "Update #{team_1.name}", href: "/teams/#{team_1.id}/edit"
+      click_link "Update #{team_1.name}"
+    
+      expect(page).to have_content("Name")
+      expect(current_path).to eq("/teams/#{team_1.id}/edit")
     end
+
+    # it 'has a link to delete '
   end
 end

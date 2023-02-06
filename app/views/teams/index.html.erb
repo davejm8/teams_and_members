@@ -4,7 +4,7 @@
 
 <p><%= link_to "Add New Team", "/teams/new"%></p>
 <% @teams.each do |team| %>
-  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Update Team", "/teams/#{team.id}/edit" %></h3>
+  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Update #{team.name}", "/teams/#{team.id}/edit" %></h3>
   <p><%=team.created_at%></p>
 <% end %>
 

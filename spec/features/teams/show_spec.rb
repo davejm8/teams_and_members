@@ -15,7 +15,7 @@ describe 'team specifc page' do
     end
 
     
-    it 'displays the number of members associated with a team on the show page' d
+    it 'displays the number of members associated with a team on the show page' do
       visit "/teams/#{team_1.id}"
 
       expect(page).to have_content("Team Members: 2")
