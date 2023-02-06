@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/teams', to: 'teams#create'
   get '/teams/:id', to: 'teams#show'
   get '/teams/:team_id/members', to: 'team_members#index'
+  get '/teams/:id/edit', to: 'teams#edit'
   post '/teams/:id/edit', to: 'teams#edit'
   patch 'teams/:id', to: 'teams#update'
 

@@ -15,26 +15,22 @@ describe 'team specifc page' do
     end
 
     
-    it 'displays the number of members associated with a team on the show page' do
-      
+    it 'displays the number of members associated with a team on the show page' d
       visit "/teams/#{team_1.id}"
 
       expect(page).to have_content("Team Members: 2")
     end
 
-    # user story 8
     it 'has a link to the members index at the top of every page' do
       visit "/teams"
 
       expect(page).to have_link 'Members Index', href: "/members"
-
 
       visit "/teams/#{team_1.id}"
 
       expect(page).to have_link 'Members Index', href: "/members"
     end
 
-    # user story 9
     it 'has a link to the team index' do
       visit "/teams"
       expect(page).to have_link 'Teams Index', href: "/teams"
@@ -43,7 +39,6 @@ describe 'team specifc page' do
       expect(page).to have_link 'Teams Index', href: "/teams"
     end
 
-    # user story 10
     it 'has a link on the team page to the that teams members' do
       
       visit "/teams/#{team_1.id}"

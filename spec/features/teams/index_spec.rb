@@ -10,7 +10,6 @@ RSpec.describe 'team index page' do
 
   describe 'when I visit team index page' do
     it 'shows the attributes of each team' do
-    
       expect(page).to have_content(team_1.name)
       expect(page).to have_content(team_2.name)
     end
@@ -18,7 +17,6 @@ RSpec.describe 'team index page' do
 
   describe 'when I visit team index page' do
     it "shows when the records were created" do
-      
       expect(team_2.name).to appear_before(team_1.name)
     end
 
@@ -36,15 +34,15 @@ RSpec.describe 'team index page' do
     end
 
     it 'has a link on the team page that takes me to a page to create a new team' do
-      visit "/teams"
-  
       expect(page).to have_link 'Add New Team', href: "/teams/new"
     end
 
     it 'has a link on the team page that takes me to a page to create a new team' do
-      visit "/teams"
-  
       expect(page).to have_link 'Add New Team', href: "/teams/new"
+    end
+
+    it 'has a link to team update page for specific team' do
+      expect(page).to have_link "Update Team", href: "/teams/#{team_1.id}/edit"
     end
   end
 end
