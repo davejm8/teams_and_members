@@ -19,15 +19,25 @@ describe 'team index page' do
       expect(page).to have_content(luigi.wage)
       expect(page).to have_content(luigi.injured)
     end
+    
+    it 'has a link to the members index' do
+      visit "/members"
+      expect(page).to have_link 'Members Index', href: "/members"
+  
+      visit "/members/#{mario.id}"
+      expect(page).to have_link 'Members Index', href: "/members"
+    end
   end
 
-  it 'has a link to only display members who are injured' do
-    visit "/members"
-    expect(page).to have_link "Injured Members"
-    click_link "Injured Members"
-  
-    expect(page).to have_content(luigi.name)
-    expect(page).to have_content(luigi.wage)
-    expect(page).to have_content(luigi.injured)
+  describe 'when i click on a link injured members i see only the injured members' do
+    it 'has a link to only display members who are injured' do
+      visit "/members"
+      expect(page).to have_link "Injured Members"
+      click_link "Injured Members"
+    
+      expect(page).to have_content(luigi.name)
+      expect(page).to have_content(luigi.wage)
+      expect(page).to have_content(luigi.injured)
+    end
   end
 end
