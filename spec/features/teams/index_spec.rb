@@ -10,8 +10,8 @@ RSpec.describe 'team index page' do
 
   describe 'when I visit team index page' do
     it 'shows the attributes of each team' do
+    
       expect(page).to have_content(team_1.name)
-
       expect(page).to have_content(team_2.name)
     end
   end
@@ -21,5 +21,19 @@ RSpec.describe 'team index page' do
       
       expect(team_2.name).to appear_before(team_1.name)
     end
+
+    it 'displays the created_at for each team' do
+      team_1 = Team.create!(name: "Smash Bros", games_won: 10, won_championship: true)
+      sleep(1)
+      team_2 = Team.create!(name: "Hooligans", games_won: 7, won_championship: false)
+      visit "/teams"
+      expect(page).to have_content(team_1.name)
+      expect(page).to have_content(team_1.created_at)
+  
+      expect(team_2.name).to appear_before(team_2.created_at.to_s)
+      expect(team_2.created_at.to_s).to appear_before(team_1.name)
+      expect(team_1.name).to appear_before(team_1.created_at.to_s)
+    end
+  
   end
 end
