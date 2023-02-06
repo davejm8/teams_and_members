@@ -34,6 +34,12 @@ RSpec.describe 'team index page' do
       expect(team_2.created_at.to_s).to appear_before(team_1.name)
       expect(team_1.name).to appear_before(team_1.created_at.to_s)
     end
+
+    it 'has a link on the team page that takes me to a page to create a new team' do
+      visit "/teams"
+  
+      expect(page).to have_link 'Add New Team', href: "/teams/new"
+    end
   
   end
 end
