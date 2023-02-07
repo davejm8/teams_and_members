@@ -23,7 +23,6 @@ describe 'member specifc page' do
     it 'has a button to delete the specific team with all members' do
       visit "/members/#{mario.id}"
       click_button "Delete #{mario.name}"
-      save_and_open_page
 
       expect(page).to_not have_content("#{mario.name}")
       expect(current_path).to eq("/members")
