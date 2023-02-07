@@ -46,8 +46,8 @@ RSpec.describe 'team specifc page' do
     end
   
     it 'has a link to delete the specific team with all members' do
-      expect(page).to have_link "Delete #{team_1.name}", href "/teams/#{team_1.id}"
-      click_link "Delete #{team_1.name}"
+      visit "/teams/#{team_1.id}"
+      click_button "Delete #{team_1.name}"
 
       expect(page).to_not have_content("#{team_1.name}")
       expect(current_path).to eq("/teams")
