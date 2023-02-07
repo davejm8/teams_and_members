@@ -13,12 +13,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team = Team.create!({
-      name: params["name"],
-      games_won: params["games_won"],
-      won_championship: params["won_championship"]
-      })
-
+    team = Team.new(team_params)
     team.save
     redirect_to '/teams'
   end
@@ -35,8 +30,9 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team = Team.find(params[:id])
-    @team.destroy
+    team = Team.find(params[:id])
+    team.members.destroy_all
+    team.destroy
     redirect_to "/teams"
   end
 
