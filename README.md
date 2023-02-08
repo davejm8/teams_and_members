@@ -15,4 +15,4 @@ Before you can enter; however, please follow the steps below:
 -For coverage report: In the mac terminal type `bundle exec rspec` and then `open coverage/index.html`
 
 * ...
-![image text](https://cloud.githubusercontent.com/assets/711743/25648417/57cd2c0c-2fe9-11e7-8753-b60ea2656faf.png)
+![image text](https://user-images.githubusercontent.com/116821829/217400518-11a3a749-3150-49cc-a8ee-dcd44dc04871.png)
