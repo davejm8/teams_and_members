@@ -9,8 +9,10 @@ describe Member do
   let!(:mario) {smash.members.create!(name: "Mario", wage: 95.05, injured: false, team_id: smash.id)}
   let!(:luigi) {smash.members.create!(name: "Luigi", wage: 90.00, injured: true, team_id: smash.id)}
 
-  it 'has a class method to pull out injured members' do
+  describe '.injured_sort' do 
+    it 'has a class method to pull out injured members' do
 
-    expect(Member.injured_sort).to eq([luigi])
+      expect(Member.injured_sort).to eq([luigi])
+    end
   end
 end
