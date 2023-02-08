@@ -15,4 +15,4 @@ Before you can enter; however, please follow the steps below:
 -For coverage report: In the mac terminal type `bundle exec rspec` and then `open coverage/index.html`
 
 * ...
-<img width="559" alt="Teams and Members" src="https://files.slack.com/files-pri/T029P2S9M-F04M4BB0N69/screen_shot_2023-01-30_at_4.13.10_pm.png">
+<img width="559" alt="Teams and Members" src="https://ibb.co/fvDn0fS">
