@@ -1,0 +1,10 @@
+<%= form_with url: "/teams/#{@team.id}/members", method: :post, local:true do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+  <%= form.label :wage, "Wage" %>
+  <%= form.text_field :wage %>
+  <%= form.label :injured, "Is injured?"%>
+  <%= form.check_box :injured %>
+
+  <%= form.submit "Create Member" %>
+<% end%>

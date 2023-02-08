@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Before you can enter; however, please follow the steps below: 
+1. Ensure you have **Ruby 2.7.4** and **Rails 5.2.8.1**
+1. In the terminal type `bundle install`
+1. Then type `rails db:create`, then `rails db: migrate`, and then `rails db: seed` 
+1. Then type `rails server`
+1. In your brower navigate to `http://localhost:3000/`
+1. Look through the site, click on links, and try to update/create new artifacts & exhibits!
+1. Now, back in the terminal type `control C` to exit the server
+1. Then type `bundle exec rspec spec/models` to see all model tests passing
+1. Then type `bundle exec rspec spec/features` to see all feature tests passing
+1. If you'd like to see a webpage of the SimpleCove test coveraage: 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+-For coverage report: In the mac terminal type `bundle exec rspec` and then `open coverage/index.html`
 
 * ...
+![image text](https://user-images.githubusercontent.com/116821829/217400518-11a3a749-3150-49cc-a8ee-dcd44dc04871.png)

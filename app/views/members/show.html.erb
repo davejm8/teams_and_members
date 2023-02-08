@@ -1,4 +1,4 @@
-<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Players Index", "/members" %></p>
+<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Members Index", "/members" %></p>
 
 <h1><%= @members.name %></h1>
 
@@ -7,3 +7,5 @@
 <p>Currently&nbsp;Injured: <%= @members.injured %></p>
 
 <h3>Team: <%= link_to @members.team.name, "/teams/#{@members.team.id}" %></h3>
+<p><%= button_to "Update Member", "/members/#{@members.id}/edit"%>
+<p><%= button_to "Delete #{@members.name}", "/members/#{@members.id}/delete"%></p>

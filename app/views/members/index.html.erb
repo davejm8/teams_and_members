@@ -1,10 +1,10 @@
-<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Players Index", "/members" %></p>
-
-<h1>All Players</h1>
+<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Members Index", "/members" %></p>
+<%= link_to "Injured Members", "/members?injured=true" %>
+<h1><%= @header %></h1>
 
 
 <% @members.each do |member| %>
-  <h3><%= link_to member.name, "/members/#{member.id}" %></h3>
+  <h3><%= link_to member.name, "/members/#{member.id}" %>/  <%= link_to "Update #{member.name}", "/members/#{member.id}/edit" %></h3>
   <p>Wage: <%= member.wage %></p>
   <p>Injured? <%= member.injured %></p>
   <p>Team: <%= member.team.name %></p>

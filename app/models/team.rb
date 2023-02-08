@@ -4,4 +4,8 @@ class Team < ApplicationRecord
   def member_count
     self.members.count
   end
+
+  def sort_name
+    members.order(:name)
+  end
 end

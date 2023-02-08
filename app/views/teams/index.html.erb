@@ -1,9 +1,10 @@
-<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Players Index", "/members" %></p>
+<p><%= link_to "Home", "/" %> | <%= link_to "Teams Index", "/teams" %> | <%= link_to "Members Index", "/members" %></p>
 
 <h1>All Teams</h1>
 
-
+<p><%= link_to "Add New Team", "/teams/new"%></p>
 <% @teams.each do |team| %>
-  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Members", "/teams/#{team.id}/members" %></h3>
+  <h3><%= link_to team.name, "/teams/#{team.id}" %> /  <%= link_to "Update #{team.name}", "/teams/#{team.id}/edit" %></h3>
   <p><%=team.created_at%></p>
 <% end %>
+
